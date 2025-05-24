@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Check If Adult</title>
+<style>
+  body { font-family: Verdana, sans-serif; padding: 20px; background: #f9f9f9; }
+  input, button { padding: 10px; margin-top: 5px; font-size: 16px; }
+  #result { margin-top: 15px; background: #fff; padding: 12px; border-radius: 6px; }
+</style>
+</head>
+<body>
+
+<h2>Are You an Adult?</h2>
+
+<label>Enter your age:</label><br />
+<input type="number" id="ageInput" placeholder="Enter your age" /><br />
+<button onclick="checkAdult()">Check</button>
+
+<div id="result"></div>
+
+<script>
+function checkAdult() {
+  const age = parseInt(document.getElementById('ageInput').value);
+  if (isNaN(age) || age < 0) {
+    alert('Please enter a valid positive age');
+    return;
+  }
+  const isAdult = age >= 18;
+  document.getElementById('result').textContent = `Adult? → ${isAdult}`;
+}
+</script>
+
+</body>
+</html>
